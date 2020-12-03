@@ -13,9 +13,9 @@
 |Etcd 2|k8setcd2.example.com|10.1.84.123|Ubuntu 20.04|1G|1|
 |Etcd 3|k8setcd3.example.com|10.1.84.124|Ubuntu 20.04|1G|1|
 |Master 1|k8skmaster1.example.com|10.1.84.125|Ubuntu 20.04|2G|2|
-|Master 2|k8skmaster2.example.com|10.1.84.126Ubuntu 20.04|2G|2|
-|Master 3|k8skmaster3.example.com|10.1.84.127Ubuntu 20.04|2G|2|
-|Worker|kworker1.example.com|10.1.84.128Ubuntu 20.04|1G|1|
+|Master 2|k8skmaster2.example.com|10.1.84.126|Ubuntu 20.04|2G|2|
+|Master 3|k8skmaster3.example.com|10.1.84.127|Ubuntu 20.04|2G|2|
+|Worker|kworker1.example.com|10.1.84.128|Ubuntu 20.04|1G|1|
 
 
 ## Copy TLS certificates to kubernetes master node

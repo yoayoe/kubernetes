@@ -99,10 +99,10 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=etcd
 ```
 {
 
-declare -a NODES=(172.16.16.221 172.16.16.222 172.16.16.223)
+declare -a NODES=(10.1.84.122 10.1.84.122 10.1.84.122)
 
 for node in ${NODES[@]}; do
-  scp ca.pem etcd.pem etcd-key.pem root@$node: 
+  scp ca.pem etcd.pem etcd-key.pem plnpusat@$node: 
 done
 
 }

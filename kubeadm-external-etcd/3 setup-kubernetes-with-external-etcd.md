@@ -8,10 +8,13 @@
 ## Vagrant Environment
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
-|Etcd 1|etcd1.example.com|172.16.16.221|Ubuntu 20.04|1G|1|
-|Etcd 2|etcd2.example.com|172.16.16.222|Ubuntu 20.04|1G|1|
-|Etcd 3|etcd3.example.com|172.16.16.223|Ubuntu 20.04|1G|1|
-|Master|kmaster.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
+|loadbalancer|k8sloadbalancer.example.com|10.1.84.121|Ubuntu 20.04|1G|1|
+|Etcd 1|k8setcd1.example.com|172.16.16.221|Ubuntu 20.04|1G|1|
+|Etcd 2|k8setcd2.example.com|172.16.16.222|Ubuntu 20.04|1G|1|
+|Etcd 3|k8setcd3.example.com|172.16.16.223|Ubuntu 20.04|1G|1|
+|Master 1|k8skmaster1.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
+|Master 2|k8skmaster2.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
+|Master 3|k8skmaster3.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
 |Worker|kworker1.example.com|172.16.16.101|Ubuntu 20.04|1G|1|
 
 
@@ -76,13 +79,14 @@ We need this config file to specify that we are going to be using an external et
 ```
 {
 
-ETCD1_IP="172.16.16.221"
-ETCD2_IP="172.16.16.222"
-ETCD3_IP="172.16.16.223"
+ETCD1_IP="10.1.84.122"
+ETCD2_IP="10.1.84.123"
+ETCD3_IP="10.1.84.124"
 
 cat <<EOF > kubeadm-config.yaml
 apiVersion: kubeadm.k8s.io/v1beta2
 kind: ClusterConfiguration
+controlPlaneEndpoint: "10.1.84.121:6443"
 networking:
   podSubnet: "192.168.0.0/16"
 etcd:

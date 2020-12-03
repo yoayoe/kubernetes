@@ -9,13 +9,13 @@
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
 |loadbalancer|k8sloadbalancer.example.com|10.1.84.121|Ubuntu 20.04|1G|1|
-|Etcd 1|k8setcd1.example.com|172.16.16.221|Ubuntu 20.04|1G|1|
-|Etcd 2|k8setcd2.example.com|172.16.16.222|Ubuntu 20.04|1G|1|
-|Etcd 3|k8setcd3.example.com|172.16.16.223|Ubuntu 20.04|1G|1|
-|Master 1|k8skmaster1.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
-|Master 2|k8skmaster2.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
-|Master 3|k8skmaster3.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
-|Worker|kworker1.example.com|172.16.16.101|Ubuntu 20.04|1G|1|
+|Etcd 1|k8setcd1.example.com|10.1.84.122|Ubuntu 20.04|1G|1|
+|Etcd 2|k8setcd2.example.com|10.1.84.123|Ubuntu 20.04|1G|1|
+|Etcd 3|k8setcd3.example.com|10.1.84.124|Ubuntu 20.04|1G|1|
+|Master 1|k8skmaster1.example.com|10.1.84.125|Ubuntu 20.04|2G|2|
+|Master 2|k8skmaster2.example.com|10.1.84.126Ubuntu 20.04|2G|2|
+|Master 3|k8skmaster3.example.com|10.1.84.127Ubuntu 20.04|2G|2|
+|Worker|kworker1.example.com|10.1.84.128Ubuntu 20.04|1G|1|
 
 
 ## Copy TLS certificates to kubernetes master node

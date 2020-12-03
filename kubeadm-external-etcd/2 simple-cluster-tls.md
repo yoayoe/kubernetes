@@ -61,9 +61,9 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 ```
 {
 
-ETCD1_IP="172.16.16.221"
-ETCD2_IP="172.16.16.222"
-ETCD3_IP="172.16.16.223"
+ETCD1_IP="10.1.84.122"
+ETCD2_IP="10.1.84.123"
+ETCD3_IP="10.1.84.124"
 
 cat > etcd-csr.json <<EOF
 {
@@ -140,9 +140,9 @@ NODE_IP="172.16.16.221"
 
 ETCD_NAME=$(hostname -s)
 
-ETCD1_IP="172.16.16.221"
-ETCD2_IP="172.16.16.222"
-ETCD3_IP="172.16.16.223"
+ETCD1_IP="10.1.84.122"
+ETCD2_IP="10.1.84.123"
+ETCD3_IP="10.1.84.124"
 
 
 cat <<EOF >/etc/systemd/system/etcd.service
@@ -166,7 +166,7 @@ ExecStart=/usr/local/bin/etcd \\
   --advertise-client-urls https://${NODE_IP}:2379 \\
   --listen-client-urls https://${NODE_IP}:2379,https://127.0.0.1:2379 \\
   --initial-cluster-token etcd-cluster-1 \\
-  --initial-cluster etcd1=https://${ETCD1_IP}:2380,etcd2=https://${ETCD2_IP}:2380,etcd3=https://${ETCD3_IP}:2380 \\
+  --initial-cluster k8setcd1=https://${ETCD1_IP}:2380,k8setcd2=https://${ETCD2_IP}:2380,k8setcd3=https://${ETCD3_IP}:2380 \\
   --initial-cluster-state new
 Restart=on-failure
 RestartSec=5
